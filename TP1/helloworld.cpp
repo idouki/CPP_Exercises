@@ -1,11 +1,13 @@
 #include <iostream>
 
 int main(){
-    auto var = 0;
+    auto stringVar = std::string {};
 
-    std::cin >> var ;
+    std::cout << "What's ur name ?";
 
-    std::cout << var << std::endl;
+    std::cin >> stringVar;
+
+    std::cout << "Hello " << stringVar << std::endl;
 
     return 0;
 }
