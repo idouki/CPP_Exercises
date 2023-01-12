@@ -5,7 +5,8 @@ int main(){
 
     std::cout << "What's ur name ?";
 
-    std::cin >> stringVar;
+    std::getline(std::cin, stringVar); // lis toute uneligne 
+    //std::cin >> stringVar; // lis que le premier mot
 
     std::cout << "Hello " << stringVar << std::endl;
 
