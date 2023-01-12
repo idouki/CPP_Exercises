@@ -1,7 +1,7 @@
 #include <iostream>
 
 int main(){
-    auto stringVar = std::string {};
+    auto stringVar = std::string {}; // #include <string>
 
     std::cout << "What's ur name ?";
 
