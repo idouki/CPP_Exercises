@@ -1,13 +1,15 @@
 #pragma once
 
 #include <string>
+#include <vector>
+#include <optional>
 #include <Plush.hpp>
 
 class PlushStore{
 public:
-    PlushStore(std::string name){
-        _name = name;
-    }
+    PlushStore(const std::string& name):
+        _name {name}
+    {}
 
     std::string get_name() const{
         return _name;
@@ -38,17 +40,26 @@ public:
         if(_wealth_amount == 0){
             return 0;
         }
-        _wealth_amount -= (cost > _wealth_amount) ? cost - _wealth_amount : cost;
+        int new_cost = (cost > _wealth_amount) ? cost - _wealth_amount : cost;
+        _wealth_amount -= new_cost;
         _stock_size++;
         _experience++;
-        return cost + _experience;
+        // Ajouter peluche
+        _plushs.emplace_back(new_cost);
+        return new_cost + _experience;
     }
 
+/*
+    std::optional<Plush> buy(int cost){
+        _plushs.
+    }
+*/
 
 private:
     std::string _name;
     int _stock_size = 0;
     int _wealth_amount = 0;
-    int _debt_amount =0;
+    int _debt_amount =  0;
     int _experience = 0;
+    std::vector<Plush> _plushs;
 };

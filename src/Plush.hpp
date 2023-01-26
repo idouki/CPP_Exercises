@@ -3,12 +3,12 @@
 class Plush
 {
 public:
-    Plush(int cost)
-    {
-        _cost = cost;
-    }
+    Plush(int cost):
+        _cost {cost}
+    {}
+    
 
-    Plush(){}
+    Plush() = default;
 
     int get_cost() const{
         return _cost;
