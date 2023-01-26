@@ -1,6 +1,7 @@
 #include <catch2/catch_test_macros.hpp>
 
 #include <string>
+#include <iostream>
 
 TEST_CASE("Test 00 - "
           "1. Une string instanciee par defaut a pour taille 0.")
