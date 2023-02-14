@@ -7,6 +7,8 @@ void Trainer::capture(PokemonPtr pokemon)
         return;
     }
 
+    pokemon->set_trainer(*this);
+
     for (auto &pokeball : _pokeballs)
     {
         if (pokeball.empty())
