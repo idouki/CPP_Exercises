@@ -20,3 +20,9 @@ void Trainer::capture(PokemonPtr pokemon)
 
     _pc.transfer(std::move(pokemon));
 }
+
+void Trainer::store_in_pc(const int pokemon_id) // TODO : pourquoi size_t
+{
+    Pokeball &pokeball = _pokeballs[pokemon_id];
+    _pc.transfer(std::move(pokeball.remove()));
+}

@@ -19,6 +19,8 @@ public:
 
     void capture(PokemonPtr pokemon);
 
+    void store_in_pc(const int pokemon_id);
+
 private:
     const std::string _name;
     PC &_pc;

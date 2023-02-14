@@ -4,17 +4,23 @@
 class Pokeball
 {
 public:
-
-    bool empty() const{
-        return _empty;
+    bool empty() const
+    {
+        return _pokemon == nullptr;
     }
 
-    void store(PokemonPtr pokemon){
+    void store(PokemonPtr pokemon)
+    {
         _pokemon = std::move(pokemon);
-        _empty = false;
     }
 
-    Pokemon& pokemon() const{
+    PokemonPtr remove()
+    {
+        return std::move(_pokemon);
+    }
+
+    Pokemon &pokemon() const
+    {
         return *_pokemon;
     }
 
