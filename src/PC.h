@@ -8,6 +8,9 @@
 class PC
 {
 public:
+
+    PC() = default;
+
     bool empty() const {
         return _pokemons.empty();
     }
@@ -24,4 +27,5 @@ public:
 
 private:
     std::vector<PokemonPtr> _pokemons;
+
 };
