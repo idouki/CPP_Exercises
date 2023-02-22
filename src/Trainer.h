@@ -2,6 +2,7 @@
 
 #include "PC.h"
 #include "Pokeball.h"
+#include "Pokedex.h"
 #include <array>
 
 // A person that captures Pokemons and makes them fight.
@@ -22,6 +23,11 @@ public:
     void store_in_pc(const int pokemon_id);
 
     void fetch_from_pc(const std::string &pokemon_name);
+
+    Pokedex pokedex() const
+    {
+        return Pokedex{};
+    }
 
 private:
     const std::string _name;
