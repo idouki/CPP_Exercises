@@ -21,6 +21,8 @@ public:
 
     void store_in_pc(const int pokemon_id);
 
+    void fetch_from_pc(const std::string &pokemon_name);
+
 private:
     const std::string _name;
     PC &_pc;
