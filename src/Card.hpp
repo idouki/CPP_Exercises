@@ -1,39 +1,38 @@
 #pragma once
 
 #include <string>
+#include <string_view>
 
-enum CardType {
+enum class CardType {
     Monster, Spell, Trap
 };
 
-std::string to_string(CardType card_type){
-    auto result = std::string {};
+std::string_view to_string(const CardType card_type){ // TODO : pourquoi const
 
     switch(card_type){
-        case Monster : result = "Monster"; break;
-        case Spell : result = "Spell"; break;
-        case Trap : result = "Trap"; break;
+        case CardType::Monster : return "Monster"; 
+        case CardType::Spell : return "Spell"; 
+        case CardType::Trap : return "Trap"; 
     }
 
-    return result;
+    return "";
+
 }
 
 class Card {
 public:
-    Card(std::string id, CardType type):
+    Card(std::string_view id, CardType type):
         _id {id},
         _type {type}
     {}
 
     void set_name(std::string name){ _name = name; }
-
-    std::string get_name() const { return _name; }
+    const std::string& get_name() const { return _name; }
 
     void set_description(std::string description){ _description = description; }
+    const std::string& get_description() const { return _description; }
 
-    std::string get_description() const { return _description; }
-
-    std::string get_id() const { return _id; }
+    const std::string& get_id() const { return _id; }
 
     CardType get_type() const { return _type; }
 
