@@ -18,6 +18,10 @@ public:
         return std::make_unique<IntLeaf>(data);
     }
 
+    int height() const override {return 0;}
+
+    int node_count() const override {return 1;}
+
 private:
     int _data;
 };

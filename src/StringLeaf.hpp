@@ -19,6 +19,10 @@ public:
         return std::make_unique<StringLeaf>(data);
     }
 
+    int height() const override {return 0;}
+
+    int node_count() const override {return 1;}
+
 private:
     std::string _data;
 };
