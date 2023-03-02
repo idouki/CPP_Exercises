@@ -1,7 +1,5 @@
 #include "IntLeaf.hpp"
 
-#include "IntLeaf.hpp"
-
 #include <iostream>
 #include <string>
 
