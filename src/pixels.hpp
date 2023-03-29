@@ -40,3 +40,17 @@ Luma from(const RGB& r){
     return {lib::rgb_to_grayscale(r.r, r.g, r.b)};
 }
 
+const RGBA operator+(const RGBA& lp, const RGBA& rp){
+    const auto [r, g, b, a] = lib::mix_color(lp.r, lp.g, lp.b, lp.a, rp.r, rp.g, rp.b, rp.a);
+    return {r, g, b, a};
+}
+
+const RGBA operator+(const RGBA& lp, const RGB& rp){
+    const auto [r, g, b, a] = lib::mix_color(lp.r, lp.g, lp.b, lp.a, rp.r, rp.g, rp.b, 255);
+    return {r, g, b, a};
+}
+
+const RGB operator+(const RGB& lp, const RGBA& rp){
+    const auto [r, g, b, a] = lib::mix_color(lp.r, lp.g, lp.b, 255, rp.r, rp.g, rp.b, rp.a);
+    return {r, g, b};
+}
