@@ -52,9 +52,9 @@ private:
     std::array<std::array<P, W>, H> _pixels;
 };
 
-template <typename P, size_t W, size_t H>
-const Image<P, W, H> operator+(const Image<P, W, H> &l, const Image<P, W, H> &r) {
-    Image<P, W, H> image = {};
+template <typename A,typename B, size_t W, size_t H>
+const Image<A, W, H> operator+(const Image<A, W, H> &l, const Image<B, W, H> &r) {
+    Image<A, W, H> image = {};
 
     for(size_t j = 0; j < H; j++)
         for(size_t i = 0; i < W; i++)
@@ -62,3 +62,4 @@ const Image<P, W, H> operator+(const Image<P, W, H> &l, const Image<P, W, H> &r)
         
     return image;
 }
+
